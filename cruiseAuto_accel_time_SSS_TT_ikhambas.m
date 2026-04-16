@@ -50,23 +50,20 @@ threshold = baseline + 0.1 * max(velocity_smooth);
 
 % 4. Search for the first point that meets both threshold and growth criteria
 t_start = NaN; 
+i = 1; % Initialize index
+max_idx = length(velocity_smooth) - lookahead;
 
-for i = 1:length(velocity_smooth) - lookahead
-    % Check if speed is significantly above baseline
+% The loop runs as long as t_start is unknown AND we haven't hit the end
+while isnan(t_start) && i <= max_idx
     if velocity_smooth(i) > threshold
-        
-        % Check if speed continues to increase over the next few points
         future_segment = velocity_smooth(i:i+lookahead);
         diffs = diff(future_segment);
         
         if mean(diffs) > accel_limit 
-            t_start = time_vec(i);
-            
-            % Stop looking once the first valid start point is found
-            break; 
+            t_start = time_vec(i); % This will stop the while loop
         end
-     end
-end
+    end
+    i = i + 1; % Move to the next point
 
 %% ____________________
 %% FORMATTED TEXT/FIGURE DISPLAYS
