@@ -38,7 +38,7 @@ data_file = 'Sp26_cruiseAuto_newTire_raw_allTests_data.csv';
 t_start = cruiseAuto_accel_time_SSS_TT_ikhambas(time_vec, speed_vec);
 
 % 3. Steady State Speed
-v_ss = cruiseAuto_sub4_steady_state_speeds_SSS_TT_aanajpur(time_vec, speed_vec, t_start);
+[~, v_ss] = cruiseAuto_sub4_steady_state_speeds_SSS_TT_aanajpur(time_vec, speed_vec, t_start);
 
 % 4. Time Constant
 tau = cruiseAuto_time_constant_015_19_lee5698(time_vec, speed_vec, t_start);
@@ -46,7 +46,7 @@ tau = cruiseAuto_time_constant_015_19_lee5698(time_vec, speed_vec, t_start);
 %% ____________________
 %% FORMATTED TEXT/FIGURE DISPLAYS
 
-fprintf('Vehicle: %s | Tire: %s\n', char(metadata.vehicle), char(metadata.tire));
+fprintf('Vehicle: %s; Tire: %s\n', char(metadata.vehicle), char(metadata.tire));
 fprintf('Accel Start: %.2f s\n', t_start);
 fprintf('Steady-State Speed: %.2f m/s\n', v_ss);
 fprintf('Time Constant (Tau): %.4f s\n', tau);
