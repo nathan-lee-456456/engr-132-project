@@ -1,4 +1,4 @@
-function [time_vec, speed_vec, metadata] = sub1_data_handler(filepath)
+function [time_vec, speed_vec, metadata] = cruiseAuto_dataHandling_015_19_jain925(data_file)
 
     %sub1_data_handler - Imports, cleans, and normalizes raw ACC speed test
     %data
@@ -12,7 +12,7 @@ function [time_vec, speed_vec, metadata] = sub1_data_handler(filepath)
     %   speed_vec_clean - cleaned speed vector (m/s)
     %
     %   data - struct with fields: vehicle, tire, trial_id
-    table = readtable(filepath); 
+    table = readtable(data_file); 
     time_vec = table{:, 1};
     speed_vec = table{:,2};
     % Get the column name split it at _ and then get the necessary data 

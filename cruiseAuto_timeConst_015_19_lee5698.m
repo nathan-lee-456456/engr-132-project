@@ -1,4 +1,4 @@
-function tau = cruiseAuto_time_constant_015_19_lee5698(time_vec, speed_vec, t_start)
+function tau = cruiseAuto_timeConst_015_19_lee5698(time_vec, speed_vec, t_start)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ENGR 132 
 % Program Description 

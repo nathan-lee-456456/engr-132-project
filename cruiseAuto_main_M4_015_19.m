@@ -32,16 +32,16 @@ data_file = 'Sp26_cruiseAuto_newTire_raw_allTests_data.csv';
 %% CALCULATIONS
 
 % 1. Import and clean data
-[time_vec, speed_vec, metadata] = sub1_data_handler(data_file);
+[time_vec, speed_vec, metadata] = cruiseAuto_dataHandling_015_19_jain925(data_file);
 
 % 2. Acceleration Start Time
-t_start = cruiseAuto_accel_time_SSS_TT_ikhambas(time_vec, speed_vec);
+t_start = cruiseAuto_timeAccel_015_19_ikhambas(time_vec, speed_vec);
 
 % 3. Steady State Speed
-[~, v_ss] = cruiseAuto_sub4_steady_state_speeds_SSS_TT_aanajpur(time_vec, speed_vec, t_start);
+[~, v_ss] = cruiseAuto_speedInitialFinal_015_19_aanajpur(time_vec, speed_vec, t_start);
 
 % 4. Time Constant
-tau = cruiseAuto_time_constant_015_19_lee5698(time_vec, speed_vec, t_start);
+tau = cruiseAuto_timeConst_015_19_lee5698(time_vec, speed_vec, t_start);
 
 %% ____________________
 %% FORMATTED TEXT/FIGURE DISPLAYS

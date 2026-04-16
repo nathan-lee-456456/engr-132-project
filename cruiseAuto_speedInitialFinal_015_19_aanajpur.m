@@ -1,4 +1,4 @@
-function [v_initial, v_ss] = cruiseAuto_sub4_steady_state_speeds_SSS_TT_aanajpur(time_vec, speed_vec, t_start)
+function [v_initial, v_ss] = cruiseAuto_speedInitialFinal_015_19_aanajpur(time_vec, speed_vec, t_start)
 %Structured Comment Block 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 

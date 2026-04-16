@@ -1,4 +1,4 @@
-function t_start = cruiseAuto_accel_time_SSS_TT_ikhambas(time_vec, speed_vec)
+function t_start = cruiseAuto_timeAccel_015_19_ikhambas(time_vec, speed_vec)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ENGR 132 
 % Program Description 
