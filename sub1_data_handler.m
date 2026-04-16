@@ -44,7 +44,7 @@ function [time_vec, speed_vec, metadata] = sub1_data_handler(filepath)
 
     %Check if frozen sequences extends all the way to the end 
     if count >= window_size
-        flag((length(speed_diff) - consecutive_count + 2):end) = true; 
+        flag((length(speed_diff) - count + 2):end) = true; 
     end 
     % Make all the missing values to be true 
     flag(isnan(speed_vec)) = true; 

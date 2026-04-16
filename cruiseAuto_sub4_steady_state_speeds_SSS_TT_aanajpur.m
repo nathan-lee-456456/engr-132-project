@@ -71,9 +71,8 @@ yL = mean(pre_speed, 'omitnan');
 % Step 3: select speed values when the car has definetely stopped
 % accelerating so around the last 20%  
 
-t_start = time_vec(1); 
 t_end = time_vec(end);
-t_cutoff = t_end - 0.20 * (t_end - t_start);
+t_cutoff = t_end - 0.20 * (t_end - time_vec(1));
 post_mask = time_vec >= t_cutoff; 
 post_speed = speed_vec_clean(post_mask);
 
