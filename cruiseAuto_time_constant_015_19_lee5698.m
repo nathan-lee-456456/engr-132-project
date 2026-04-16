@@ -1,4 +1,4 @@
-function tau = cruiseAuto_time_constant_015_19_lee5698(time_vec, filtered_speed, t_start)
+function tau = cruiseAuto_time_constant_015_19_lee5698(time_vec, speed_vec, t_start)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ENGR 132 
 % Program Description 
@@ -33,11 +33,11 @@ tau_multiplier = 0.632; % The multiplier for a first-order system time constant
 
 %% ____________________
 %% CALCULATIONS
-steady_state_speed = max(filtered_speed);
+steady_state_speed = max(speed_vec);
 
 target_val = steady_state_speed * tau_multiplier;
 
-idx = find(filtered_speed >= target_val, 1, 'first');
+idx = find(speed_vec >= target_val, 1, 'first');
 
 if ~isempty(idx)
     t_at_threshold = time_vec(idx);

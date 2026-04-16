@@ -1,4 +1,4 @@
-function [yL, yH] = cruiseAuto_sub4_steady_state_speeds_SSS_TT_aanajpur(time_vec, speed_vec_clean, t_s)
+function [yL, yH] = cruiseAuto_sub4_steady_state_speeds_SSS_TT_aanajpur(time_vec, speed_vec_clean, t_start)
 %Structured Comment Block 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -60,7 +60,7 @@ function [yL, yH] = cruiseAuto_sub4_steady_state_speeds_SSS_TT_aanajpur(time_vec
 
 % Step 1: select speed where time < t_s
 
-pre_mask = time_vec < t_s; 
+pre_mask = time_vec < t_start; 
 
 pre_speed = speed_vec_clean(pre_mask); 
 
@@ -71,7 +71,7 @@ yL = mean(pre_speed, 'omitnan');
 % Step 3: select speed values when the car has definetely stopped
 % accelerating so around the last 20%  
 
-t_start = time_vec(1): 
+t_start = time_vec(1); 
 t_end = time_vec(end);
 t_cutoff = t_end - 0.20 * (t_end - t_start);
 post_mask = time_vec >= t_cutoff; 

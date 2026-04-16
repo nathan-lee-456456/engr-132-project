@@ -1,4 +1,4 @@
-function [time_vec_norm, speed_vec_clean, data] = sub1_data_handler(filepath)
+function [time_vec, speed_vec, metadata] = sub1_data_handler(filepath)
 
     %sub1_data_handler - Imports, cleans, and normalizes raw ACC speed test
     %data
@@ -18,9 +18,9 @@ function [time_vec_norm, speed_vec_clean, data] = sub1_data_handler(filepath)
     % Get the column name split it at _ and then get the necessary data 
     col_name = table.Properties.VariableNames{2}; 
     parts = strsplit(col_name, "_"); 
-    data.vehicle= parts(2); 
-    data.tire = parts(3); 
-    data.trial_id = parts(4); 
+    metadata.vehicle = parts{2}; 
+    metadata.tire = parts{3}; 
+    metadata.trial_id = parts{4}; 
 
 
     % Array that defines if the value needs to be updated
@@ -88,12 +88,12 @@ function [time_vec_norm, speed_vec_clean, data] = sub1_data_handler(filepath)
         speed_vec(flagged_idx) = interp1(valid_idx, speed_vec(valid_idx), flagged_idx, 'linear', 'extrap'); 
     end 
    
-    speed_vec_clean = speed_vec; 
+    speed_vec = speed_vec; 
 
     % Estimate the raw acceleration start time
 
     % Find the first points where rate of change exceeds a threshold 
-    speed_gradient = diff(speed_vec_clean) ./ diff(time_vec); 
+    speed_gradient = diff(speed_vec) ./ diff(time_vec); 
     accel_threshold = 0.5; 
 
     accel_start_idx = find(speed_gradient > accel_threshold, 1); 
@@ -109,5 +109,5 @@ function [time_vec_norm, speed_vec_clean, data] = sub1_data_handler(filepath)
 
     % Normalize the time so accel t = 5s
     delta_t = 5-t_s_raw; 
-    time_vec_norm = time_vec + delta_t;
+    time_vec = time_vec + delta_t;
 end 
