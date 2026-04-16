@@ -87,8 +87,6 @@ function [time_vec, speed_vec, metadata] = sub1_data_handler(filepath)
     if ~isempty(flagged_idx) && length(valid_idx) >= 2
         speed_vec(flagged_idx) = interp1(valid_idx, speed_vec(valid_idx), flagged_idx, 'linear', 'extrap'); 
     end 
-   
-    speed_vec = speed_vec; 
 
     % Estimate the raw acceleration start time
 
