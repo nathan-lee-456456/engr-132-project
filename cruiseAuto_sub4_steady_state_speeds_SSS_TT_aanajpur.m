@@ -1,4 +1,4 @@
-function [yL, yH] = sub4_steady_state_speeds(time_vec, speed_vec_clean, t_s)
+function [yL, yH] = cruiseAuto_sub4_steady_state_speeds_SSS_TT_aanajpur(time_vec, speed_vec_clean, t_s)
 %Structured Comment Block 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -75,8 +75,8 @@ t_start = time_vec(1):
 t_end = time_vec(end);
 t_cutoff = t_end - 0.20 * (t_end - t_start);
 post_mask = time_vec >= t_cutoff; 
-post_speed = speed_vec_clean(post_mask)
+post_speed = speed_vec_clean(post_mask);
 
 % Step 4: Compute yH as a mean of the final 20% window 
 
-yH = mean(post_speed)
+yH = mean(post_speed);
