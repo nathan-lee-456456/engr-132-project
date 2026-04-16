@@ -52,7 +52,7 @@ fprintf('Steady-State Speed: %.2f m/s\n', v_ss);
 fprintf('Time Constant (Tau): %.4f s\n', tau);
 
 figure;
-plot(time_vec, speed_vec, 'b-', 'LineWidth', 1.5);
+plot(time_vec, speed_vec, 'b.');
 hold on; grid on;
 xline(t_start, 'r--', 'Accel Start');
 xline(t_start + tau, 'g--', 'Tau (63.2%)');
