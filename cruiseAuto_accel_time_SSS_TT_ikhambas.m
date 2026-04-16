@@ -64,6 +64,7 @@ while isnan(t_start) && i <= max_idx
         end
     end
     i = i + 1; % Move to the next point
+end
 
 %% ____________________
 %% FORMATTED TEXT/FIGURE DISPLAYS
