@@ -15,12 +15,12 @@ replace this text with a commented list of the input arguments
 %
 % Assignment Information
 %   Assignment:     Cruise Auto - Main Function
-%   Version:        M#
-%   Team members:   Name, login@purdue.edu [repeat for each person]
-%                   Name, login@purdue.edu [repeat for each person]
-%                   Name, login@purdue.edu [repeat for each person]
-%                   Name, login@purdue.edu [repeat for each person]
-%   Team ID:        ###-##
+%   Version:        M4
+%   Team members:   Aarav Jain, jain925@purdue.edu [repeat for each person]
+%                   Abir Anajpur, aanajpur@purdue.edu [repeat for each person]
+%                   Nathan Lee, lee5698@purdue.edu [repeat for each person]
+%                   Ishaan Kedar Khambaswadkar, ikhambas@purdue.edu
+%   Team ID:        015-19
 did you complete the assignment information? delete this line if yes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
