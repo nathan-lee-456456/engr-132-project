@@ -46,7 +46,7 @@ tau = cruiseAuto_time_constant_015_19_lee5698(time_vec, speed_vec, t_start);
 %% ____________________
 %% FORMATTED TEXT/FIGURE DISPLAYS
 
-fprintf('Vehicle: %s | Tire: %s\n', metadata.vehicle, metadata.tire);
+fprintf('Vehicle: %s | Tire: %s\n', char(metadata.vehicle), char(metadata.tire));
 fprintf('Accel Start: %.2f s\n', t_start);
 fprintf('Steady-State Speed: %.2f m/s\n', v_ss);
 fprintf('Time Constant (Tau): %.4f s\n', tau);
@@ -57,7 +57,7 @@ hold on; grid on;
 xline(t_start, 'r--', 'Accel Start');
 xline(t_start + tau, 'g--', 'Tau (63.2%)');
 yline(v_ss, 'k:', 'Steady State');
-title(['Speed Response: ', metadata.vehicle, ' - ', metadata.tire]);
+title(['Speed Response: ', char(metadata.vehicle), ' - ', char(metadata.tire)]);
 xlabel('Time (s)');
 ylabel('Speed (m/s)');
 
