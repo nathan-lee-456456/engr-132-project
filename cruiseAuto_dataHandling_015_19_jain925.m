@@ -35,7 +35,7 @@ function [time_vec, speed_vec, metadata] = cruiseAuto_dataHandling_015_19_jain92
         if speed_diff(k) == 0
             count=count+1; 
         else
-            if count >= window_size
+            if count >= (window_size - 1)
                 flag((k-count+1):k) = true; 
             end
             count = 0; 
