@@ -26,7 +26,7 @@ function cruiseAuto_main_M4_015_19()
 
 %% ____________________
 %% INITIALIZATION
-data_file = 'Sp26_cruiseAuto_newTire_raw_allTests_data.csv';
+data_file = 'Sp26_cruiseAuto_benchmark_processed_data';
 
 %% ____________________
 %% CALCULATIONS
