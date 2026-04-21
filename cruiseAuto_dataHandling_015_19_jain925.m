@@ -18,9 +18,22 @@ function [time_vec, speed_vec, metadata] = cruiseAuto_dataHandling_015_19_jain92
     % Get the column name split it at _ and then get the necessary data 
     col_name = table.Properties.VariableNames{2}; 
     parts = strsplit(col_name, "_"); 
-    metadata.vehicle = parts{2}; 
-    metadata.tire = parts{3}; 
-    metadata.trial_id = parts{4}; 
+    num_parts = length(parts);
+
+    % Accounts for how many parts there are
+    if num_parts >= 4
+        metadata.vehicle = parts{2}; 
+        metadata.tire = parts{3}; 
+        metadata.trial_id = parts{4}; 
+    elseif num_parts == 3
+        metadata.vehicle = parts{1}; 
+        metadata.tire = parts{2}; 
+        metadata.trial_id = parts{3}; 
+    else
+        metadata.vehicle = col_name;
+        metadata.tire = "Unknown";
+        metadata.trial_id = "N/A";
+    end
 
 
     % Array that defines if the value needs to be updated
