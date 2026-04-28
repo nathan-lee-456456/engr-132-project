@@ -26,9 +26,8 @@ function [time_vec, speed_vec, metadata] = cruiseAuto_dataHandling_015_19_jain92
         metadata.tire = parts{3}; 
         metadata.trial_id = parts{4}; 
     elseif num_parts == 3
-        metadata.vehicle = parts{1}; 
-        metadata.tire = parts{2}; 
-        metadata.trial_id = parts{3}; 
+        metadata.vehicle = parts{2}; 
+        metadata.tire = parts{3};  
     else
         metadata.vehicle = col_name;
         metadata.tire = "Unknown";
