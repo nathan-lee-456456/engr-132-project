@@ -26,7 +26,7 @@ function cruiseAuto_main_M4_015_19()
 
 %% ____________________
 %% INITIALIZATION
-data_file = 'Sp26_cruiseAuto_benchmark_processed_data';
+data_file = 'Sp26_cruiseAuto_newTire_raw_allTests_data';
 
 %% ____________________
 %% CALCULATIONS
@@ -51,15 +51,15 @@ fprintf('Accel Start: %.2f s\n', t_start);
 fprintf('Initial speed: %.2f m/s\nSteady-State Speed: %.2f m/s\n', v_initial, v_ss);
 fprintf('Time Constant (Tau): %.4f s\n', tau);
 
-figure;
-plot(time_vec, speed_vec, 'b.');
-hold on; grid on;
-xline(t_start, 'r--', 'Accel Start');
-xline(t_start + tau, 'g--', 'Tau (63.2%)');
-yline(v_ss, 'k:', 'Steady State');
-title(['Speed Response: ', char(metadata.vehicle), ' - ', char(metadata.tire)]);
-xlabel('Time (s)');
-ylabel('Speed (m/s)');
+% figure;
+% plot(time_vec, speed_vec, 'b.');
+% hold on; grid on;
+% xline(t_start, 'r--', 'Accel Start');
+% xline(t_start + tau, 'g--', 'Tau (63.2%)');
+% yline(v_ss, 'k:', 'Steady State');
+% title(['Speed Response: ', char(metadata.vehicle), ' - ', char(metadata.tire)]);
+% xlabel('Time (s)');
+% ylabel('Speed (m/s)');
 
 % Theoretical model
 % t_model = linspace(min(time_vec), max(time_vec), 500); 

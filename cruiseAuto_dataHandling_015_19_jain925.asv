@@ -12,7 +12,7 @@ function [time_vec, speed_vec, metadata] = cruiseAuto_dataHandling_015_19_jain92
     %   speed_vec_clean - cleaned speed vector (m/s)
     %
     %   data - struct with fields: vehicle, tire, trial_id
-    col = 11;
+    col = 10;
     table = readtable(data_file); 
     time_vec = table{:, 1};
     speed_vec = table{:, col};
