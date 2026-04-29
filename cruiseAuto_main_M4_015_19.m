@@ -62,18 +62,18 @@ xlabel('Time (s)');
 ylabel('Speed (m/s)');
 
 % Theoretical model
-t_model = linspace(min(time_vec), max(time_vec), 500); 
-v_model = zeros(size(t_model));
+% t_model = linspace(min(time_vec), max(time_vec), 500); 
+% v_model = zeros(size(t_model));
 
-for i = 1:length(t_model)
-    if t_model(i) < t_start 
-        v_model(i) = v_initial; 
-    else
-        v_model(i) = v_initial + (v_ss - v_initial) * (1 - exp(-(t_model(i) - t_start) / tau));
-    end
-end
-plot(time_vec, speed_vec, 'b.'); hold on; % Real-world benchmark data points
-plot(t_model, v_model, 'r-', 'LineWidth', 2); % The theoretical model curve
+% for i = 1:length(t_model)
+%     if t_model(i) < t_start 
+%         v_model(i) = v_initial; 
+%     else
+%         v_model(i) = v_initial + (v_ss - v_initial) * (1 - exp(-(t_model(i) - t_start) / tau));
+%     end
+% end
+% plot(time_vec, speed_vec, 'b.'); hold on; % Real-world benchmark data points
+% plot(t_model, v_model, 'r-', 'LineWidth', 2); % The theoretical model curve
 
 %% ____________________
 %% RESULTS
